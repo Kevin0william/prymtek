@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRYMTEK | Sites web et solutions numériques pour les entreprises</title>
+  <meta name="description" content="PRYMTEK conçoit des sites vitrines, des boutiques e-commerce et des applications web adaptées aux besoins des entrepreneurs. Présentez-nous votre projet." />
+  <meta name="author" content="PRYMTEK" />
+  <meta property="og:title" content="PRYMTEK | Solutions numériques pour les entreprises" />
+  <meta property="og:description" content="Sites vitrines, boutiques e-commerce et applications web adaptées à votre activité. Présentez-nous votre projet." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PRYMTEK | Solutions numériques pour les entreprises" />
+  <meta name="twitter:description" content="Sites vitrines, boutiques e-commerce et applications web adaptées à votre activité." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!--
+    PRYMTEK — Solutions numériques pour les entrepreneurs
+    Configuration WhatsApp : modifiez WHATSAPP_NUMBER ci-dessous.
+    Format international sans "+" ni espaces (ex: 237600000000).
+  -->
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-primary: #0a0e17;
+      --bg-secondary: #0d1320;
+      --bg-card: #111a2e;
+      --bg-card-hover: #142036;
+      --accent-blue: #1c7fff;
+      --accent-cyan: #22d3ee;
+      --accent-glow: rgba(34, 211, 238, 0.15);
+      --text-primary: #eef2f7;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --border-color: rgba(100, 116, 139, 0.18);
+      --border-hover: rgba(34, 211, 238, 0.35);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --font: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+      --nav-height: 64px;
+      --max-width: 1140px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    a { color: var(--accent-blue); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--accent-cyan); }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ===== Layout ===== */
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+    section { padding: 100px 0; position: relative; }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 680px;
+      line-height: 1.7;
+    }
+
+    .section-header { margin-bottom: 56px; }
+
+    /* ===== Navbar ===== */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-height);
+      background: rgba(10, 14, 23, 0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 1000;
+      transition: background var(--transition);
+    }
+
+    .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 64px;
+    }
+
+    .nav-logo {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        height: 64px;
+    }
+
+    .nav-logo .brand-logo {
+        display: block;
+        width: 120px;
+        height: 56px;
+        object-fit: contain;
+        object-position: left center;
+    }
+    .nav-logo svg { width: 34px; height: 34px; }
+
+    .nav-logo-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--text-primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      transition: color var(--transition), background var(--transition);
+    }
+
+    .nav-links a:hover { color: var(--text-primary); background: rgba(255,255,255,0.05); }
+    .nav-links a.active { color: var(--accent-cyan); }
+
+    .nav-cta {
+      flex-shrink: 0;
+      padding: 10px 22px;
+      background: var(--accent-blue);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+    }
+
+    .nav-cta:hover {
+      background: #0a6ae0;
+      box-shadow: 0 0 20px rgba(28, 127, 255, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .nav-cta:active { transform: translateY(0); }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px; height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      font-family: var(--font);
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all var(--transition);
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .btn-primary {
+      background: var(--accent-blue);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: #0a6ae0;
+      box-shadow: 0 0 24px rgba(28, 127, 255, 0.35);
+      transform: translateY(-2px);
+      color: #fff;
+    }
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+    }
+    .btn-secondary:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      background: var(--accent-glow);
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: #fff;
+    }
+    .btn-whatsapp:hover {
+      background: #1da851;
+      box-shadow: 0 0 24px rgba(37, 211, 102, 0.35);
+      transform: translateY(-2px);
+      color: #fff;
+    }
+
+    .btn-sm { padding: 10px 20px; font-size: 0.85rem; }
+
+    /* ===== Hero ===== */
+    #approche {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: var(--nav-height);
+    }
+
+    .hero-bg {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      top: -20%; left: -10%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(28, 127, 255, 0.08) 0%, transparent 65%);
+      border-radius: 50%;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      bottom: -20%; right: -10%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(34, 211, 238, 0.06) 0%, transparent 65%);
+      border-radius: 50%;
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(100, 116, 139, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100, 116, 139, 0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+
+    .hero-tag {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--accent-cyan);
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+    }
+
+    .hero-title .accent {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      max-width: 620px;
+    }
+
+    .hero-complement {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 620px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-transition {
+      position: relative;
+      z-index: 1;
+      margin-top: 80px;
+      padding: 24px 32px;
+      border-left: 3px solid var(--accent-blue);
+      background: rgba(28, 127, 255, 0.04);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      max-width: 680px;
+    }
+
+    .hero-transition p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    /* ===== Services ===== */
+    #solutions { background: var(--bg-secondary); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 80px;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 36px 30px;
+      transition: border-color var(--transition), background var(--transition), transform var(--transition);
+    }
+
+    .service-card:hover {
+      border-color: var(--border-hover);
+      background: var(--bg-card-hover);
+      transform: translateY(-4px);
+    }
+
+    .service-icon {
+      width: 48px; height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(28, 127, 255, 0.12), rgba(34, 211, 238, 0.08));
+      margin-bottom: 24px;
+    }
+
+    .service-icon svg { width: 26px; height: 26px; color: var(--accent-cyan); }
+
+    .service-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 14px;
+    }
+
+    .service-card p {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .service-card .needs-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .service-card ul {
+      list-style: none;
+    }
+
+    .service-card ul li {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      padding: 5px 0 5px 20px;
+      position: relative;
+    }
+
+    .service-card ul li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 13px;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+      opacity: 0.6;
+    }
+
+    /* ===== Projects ===== */
+    .projects-intro { margin-bottom: 40px; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-image {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      background: linear-gradient(135deg, #0d1320, #162340);
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .project-image-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(100, 116, 139, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100, 116, 139, 0.06) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+
+    .project-image-glow {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%; height: 60%;
+      background: radial-gradient(circle, rgba(28, 127, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .project-image-name {
+      position: absolute;
+      bottom: 16px; left: 20px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: 0.02em;
+    }
+
+    .project-image-badge {
+      position: absolute;
+      top: 16px; left: 20px;
+      padding: 5px 12px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+      background: rgba(34, 211, 238, 0.1);
+      border: 1px solid rgba(34, 211, 238, 0.2);
+      border-radius: 20px;
+    }
+
+    .project-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-image-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 1;
+    }
+
+    .project-image-placeholder svg {
+      width: 40px; height: 40px;
+      color: var(--text-muted);
+      opacity: 0.5;
+    }
+
+    .project-image-placeholder span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      opacity: 0.5;
+    }
+
+    .project-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .project-body h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .project-category {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+      margin-bottom: 14px;
+    }
+
+    .project-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--accent-blue);
+      transition: gap var(--transition), color var(--transition);
+    }
+
+    .project-link:hover { color: var(--accent-cyan); gap: 10px; }
+
+    .project-link svg { width: 14px; height: 14px; }
+
+    .projects-transition {
+      margin-top: 72px;
+      padding: 28px 32px;
+      border-left: 3px solid var(--accent-cyan);
+      background: rgba(34, 211, 238, 0.04);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      max-width: 760px;
+    }
+
+    .projects-transition p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    /* ===== Contact ===== */
+    #contact { background: var(--bg-secondary); }
+
+    .contact-content {
+      max-width: 720px;
+    }
+
+    .contact-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .contact-text {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .contact-complement {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+
+    .contact-principles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .principle {
+      padding: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .principle-number {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      margin-bottom: 10px;
+      letter-spacing: 0.1em;
+    }
+
+    .principle p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      padding: 48px 0 32px;
+      border-top: 1px solid var(--border-color);
+      background: var(--bg-primary);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-brand svg { width: 30px; height: 30px; }
+
+    .footer-brand-text { display: flex; flex-direction: column; }
+    .footer-brand-name { font-size: 1.1rem; font-weight: 700; letter-spacing: 0.04em; }
+    .footer-brand-slogan { font-size: 0.8rem; color: var(--text-muted); }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+    .footer-links a:hover { color: var(--accent-cyan); }
+
+    .footer-copy {
+      width: 100%;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      padding-top: 24px;
+      margin-top: 24px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* ===== Scroll Reveal ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .projects-grid { grid-template-columns: 1fr 1fr; }
+      .contact-principles { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 70px 0; }
+      .container { padding: 0 20px; }
+
+      .nav-toggle { display: flex; }
+
+      .nav-links {
+        position: fixed;
+        top: var(--nav-height);
+        right: 0;
+        width: 280px;
+        max-width: 85vw;
+        height: calc(100vh - var(--nav-height));
+        background: var(--bg-secondary);
+        border-left: 1px solid var(--border-color);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+        gap: 4px;
+        transform: translateX(100%);
+        transition: transform var(--transition);
+        box-shadow: -4px 0 24px rgba(0,0,0,0.3);
+      }
+
+      .nav-links.open { transform: translateX(0); }
+
+      .nav-links a {
+        padding: 14px 16px;
+        font-size: 1rem;
+        border-radius: var(--radius-sm);
+      }
+
+      .nav-cta { display: none; }
+
+      .hero-transition, .projects-transition { padding: 20px 24px; margin-top: 56px; }
+    }
+
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .hero-buttons, .contact-buttons { flex-direction: column; }
+      .hero-buttons .btn, .contact-buttons .btn { width: 100%; }
+    }
+
+    @media (min-width: 769px) {
+      .nav-links { display: flex !important; }
+    }
+
+    .brand-logo {
+      display: block;
+      width: 200px;
+      height: 60px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .footer-brand .brand-logo {
+      width: 130px;
+      height: 58px;
+    }
+
+    @media (max-width: 480px) {
+      .brand-logo {
+        width: 120px;
+        height: 42px;
+      }
+    }
+
+    /* Focus styles */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--accent-cyan);
+      outline-offset: 2px;
+      border-radius: var(--radius-sm);
+    }
+
+    ::selection { background: rgba(34, 211, 238, 0.25); color: #fff; }
+  </style>
+  <meta property="og:image" content="https://github.com/Kevin0william/labyrinth/blob/main/PrymTek%20.PNG?raw=true">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://github.com/Kevin0william/labyrinth/blob/main/PrymTek%20.PNG?raw=true">
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="#approche" class="nav-logo" aria-label="PRYMTEK — Accueil">
+          <img
+              src="./prymtek.jpeg"
+              alt="PRYMTEK"
+              class="brand-logo"
+          >
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#approche">Notre approche</a></li>
+        <li><a href="#solutions">Nos solutions</a></li>
+        <li><a href="#contact">Parlons de votre projet</a></li>
+      </ul>
+
+      <button class="nav-cta" onclick="scrollToSection('contact')">Présenter mon projet</button>
+    </div>
+  </nav>
+
+  <!-- ===== Section 1 — Notre approche ===== -->
+  <section id="approche" aria-labelledby="approche-title">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-grid"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-tag">PRYMTEK — Solutions numériques pour les entrepreneurs</span>
+        <h1 class="hero-title" id="approche-title">Votre ambition mérite les <span class="accent">bons outils</span>.</h1>
+        <p class="hero-subtitle">Nous concevons des solutions numériques adaptées à votre activité pour vous aider à mieux présenter votre entreprise, commercialiser vos offres et simplifier vos opérations.</p>
+        <p class="hero-complement">Chaque entreprise rencontre des défis différents. Notre rôle est de comprendre le vôtre, d'identifier les possibilités et de transformer votre besoin en une solution concrète.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary" onclick="scrollToSection('solutions')">Découvrir nos solutions</button>
+          <button class="btn btn-secondary" onclick="scrollToSection('contact')">Parlons de votre projet</button>
+        </div>
+      </div>
+      <div class="hero-transition reveal">
+        <p>Chaque besoin appelle une réponse différente. Découvrons les solutions que nous pouvons construire pour votre activité.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 2 — Nos solutions et nos réalisations ===== -->
+  <section id="solutions" aria-labelledby="solutions-title">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Nos solutions</span>
+        <h2 class="section-title" id="solutions-title">Des solutions pensées pour vos usages.</h2>
+        <p class="section-subtitle">Nous proposons trois types de solutions numériques, chacune adaptée à un besoin différent. Le choix de la solution dépend de votre activité et de vos objectifs.</p>
+      </div>
+
+      <!-- Services -->
+      <div class="services-grid" id="servicesGrid"></div>
+
+      <!-- Projects -->
+      <div class="projects-intro reveal">
+        <span class="section-tag">Nos réalisations</span>
+        <h2 class="section-title">Des projets conçus pour répondre à des besoins concrets.</h2>
+        <p class="section-subtitle">Chaque réalisation illustre une manière de transformer un besoin en une solution numérique. Ces projets ont été conçus et développés intégralement par PRYMTEK.</p>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid"></div>
+
+      <div class="projects-transition reveal">
+        <p>Chaque entreprise a ses propres enjeux. Votre projet mérite la même attention : comprendre le besoin avant de définir la solution.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 3 — Parlons de votre projet ===== -->
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="contact-content">
+        <span class="section-tag">Parlons de votre projet</span>
+        <h2 class="contact-title" id="contact-title">Parlons de ce que vous souhaitez accomplir.</h2>
+        <p class="contact-text">Vous avez une idée, un projet ou une difficulté que le numérique pourrait résoudre ? Présentez-nous votre activité et expliquez-nous ce que vous souhaitez améliorer.</p>
+        <p class="contact-complement">Nous prendrons le temps de comprendre votre besoin avant de vous orienter vers une solution adaptée. Vous pourrez ensuite avancer avec une proposition claire, comprenant le périmètre du projet, les fonctionnalités prévues et le devis correspondant.</p>
+
+        <div class="contact-buttons">
+          <a href="#" id="whatsappBtn" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            Présenter mon projet sur WhatsApp
+          </a>
+          <button class="btn btn-secondary" onclick="scrollToSection('solutions')">Découvrir nos réalisations</button>
+        </div>
+
+        <div class="contact-principles">
+          <div class="principle reveal">
+            <div class="principle-number">01</div>
+            <p>Comprendre le besoin avant de proposer une solution.</p>
+          </div>
+          <div class="principle reveal">
+            <div class="principle-number">02</div>
+            <p>Définir clairement le périmètre et les livrables.</p>
+          </div>
+          <div class="principle reveal">
+            <div class="principle-number">03</div>
+            <p>Avancer avec une démarche structurée.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <!-- <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="footerLogoGrad" x1="0" y1="0" x2="40" y2="40">
+                <stop offset="0%" stop-color="#1c7fff" />
+                <stop offset="100%" stop-color="#22d3ee" />
+              </linearGradient>
+            </defs>
+            <rect x="2" y="2" width="36" height="36" rx="9" fill="none" stroke="url(#footerLogoGrad)" stroke-width="1.5" opacity="0.5" />
+            <path d="M14 12h8a6 6 0 0 1 0 12h-4l6 8M14 12v16M18 18h4a2 2 0 0 0 0-4h-4" fill="none" stroke="url(#footerLogoGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg> -->
+          <a href="#approche" class="nav-logo" aria-label="PRYMTEK — Accueil">
+          <img src="prymtek.jpeg"
+              alt="PRYMTEK"
+              class="brand-logo">
+        </a>
+          <div class="footer-brand-text">
+            <span class="footer-brand-name">PRYMTEK</span>
+            <span class="footer-brand-slogan">L'innovation à votre portée.</span>
+          </div>
+        </div>
+        <ul class="footer-links">
+          <li><a href="#approche">Notre approche</a></li>
+          <li><a href="#solutions">Nos solutions</a></li>
+          <li><a href="#contact">Parlons de votre projet</a></li>
+        </ul>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; <span id="currentYear">2026</span> PRYMTEK — L'innovation à votre portée.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ===== Configuration ===== */
+    // Numéro WhatsApp professionnel — à renseigner.
+    // Format international sans "+" ni espaces (ex: 237600000000 pour le Cameroun).
+    // Tant que ce numéro n'est pas configuré, un lien temporaire est affiché.
+    const WHATSAPP_NUMBER = '+237670078114';
+
+    /* ===== Données des services ===== */
+    const services = [
+      {
+        icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>',
+        title: 'Donnez à votre entreprise une présence à la hauteur de son ambition.',
+        description: 'Nous concevons des sites professionnels qui présentent clairement votre activité, valorisent vos services et facilitent la prise de contact avec vos futurs clients.',
+        needs: [
+          'Présenter une entreprise',
+          'Exposer ses services et ses réalisations',
+          'Recevoir des demandes de devis',
+          'Faciliter le contact avec les prospects'
+        ]
+      },
+      {
+        icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>',
+        title: 'Faites de vos produits une offre accessible en ligne.',
+        description: 'Nous créons des boutiques en ligne adaptées à vos produits et à votre clientèle, avec un parcours de commande pensé pour faciliter l\'achat.',
+        needs: [
+          'Présenter un catalogue de produits',
+          'Organiser les catégories et les fiches produits',
+          'Proposer un panier',
+          'Faciliter les commandes et les contacts commerciaux'
+        ]
+      },
+      {
+        icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>',
+        title: 'Simplifiez ce qui ralentit votre activité.',
+        description: 'Nous développons des applications web adaptées à vos besoins pour organiser vos informations, structurer vos processus et faciliter certaines opérations quotidiennes.',
+        needs: [
+          'Organiser les informations commerciales',
+          'Faciliter la saisie et le suivi de données',
+          'Automatiser certaines tâches',
+          'Créer des tableaux de bord et des outils métier'
+        ]
+      }
+    ];
+
+    /* ===== Données des projets ===== */
+    const projects = [
+      {
+        name: 'Novexa Shop',
+        category: 'Site e-commerce',
+        description: 'Une boutique en ligne conçue pour présenter des produits, faciliter leur découverte et proposer un parcours de commande avec panier et contact commercial.',
+        url: 'https://novexashop.vercel.app/',
+        image: 'novexa.png'
+      },
+      {
+        name: 'No Limits Auto Parts',
+        category: 'Site vitrine',
+        description: 'Un site de présentation dédié à une activité spécialisée dans les pièces automobiles, pensé pour valoriser l\'offre et faciliter les demandes commerciales.',
+        url: 'https://no-limite-auto-parts.vercel.app/',
+        image: 'nolimit.png'
+      },
+      {
+        name: 'GMT International Trade',
+        category: 'Site vitrine',
+        description: 'Une présence numérique conçue pour présenter une activité de commerce international et rendre les informations commerciales plus accessibles.',
+        url: 'https://gmtinternationaltrade.vercel.app/',
+        image: 'gmt.png'
+      },
+      {
+        name: 'FinTrack',
+        category: 'Application web',
+        description: 'Une application web consacrée à la gestion financière personnelle, qui illustre notre capacité à concevoir des interfaces applicatives au-delà des sites de présentation.',
+        url: 'https://fintrack-eco.vercel.app/',
+        image: 'fintrack.png'
+      },
+      {
+        name: 'Gestion des rapports',
+        category: 'Application web métier',
+        description: 'Une application conçue pour faciliter la saisie et le suivi des rapports d\'activité, avec des fonctionnalités adaptées à l\'organisation et à la consultation des données.',
+        url: 'https://rapport-pilote.vercel.app/',
+        image: 'rapport.png'
+      }
+    ];
+
+    /* ===== Rendu des services ===== */
+    function renderServices() {
+      const grid = document.getElementById('servicesGrid');
+      grid.innerHTML = services.map(s => `
+        <article class="service-card reveal">
+          <div class="service-icon">${s.icon}</div>
+          <h3>${s.title}</h3>
+          <p>${s.description}</p>
+          <div class="needs-label">Exemples de besoins</div>
+          <ul>${s.needs.map(n => `<li>${n}</li>`).join('')}</ul>
+        </article>
+      `).join('');
+    }
+
+    /* ===== Rendu des projets ===== */
+    function renderProjects() {
+      const grid = document.getElementById('projectsGrid');
+      grid.innerHTML = projects.map(p => {
+        const imageContent = p.image
+          ? `<img src="${p.image}" alt="Capture d'écran du projet ${p.name}" loading="lazy" />`
+          : `<div class="project-image-placeholder">
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+               <span>Capture à ajouter</span>
+             </div>`;
+
+        return `
+          <article class="project-card reveal">
+            <div class="project-image">
+              <div class="project-image-pattern"></div>
+              <div class="project-image-glow"></div>
+              ${imageContent}
+              <span class="project-image-badge">${p.category}</span>
+              <span class="project-image-name">${p.name}</span>
+            </div>
+            <div class="project-body">
+              <h3>${p.name}</h3>
+              <div class="project-category">${p.category}</div>
+              <p class="project-desc">${p.description}</p>
+              <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Voir le projet ${p.name} (ouvre dans un nouvel onglet)">
+                Voir le projet
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+              </a>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    /* ===== Configuration WhatsApp ===== */
+    function setupWhatsApp() {
+      const btn = document.getElementById('whatsappBtn');
+      const message = 'Bonjour PRYMTEK, je souhaite vous présenter un projet et discuter des solutions numériques qui pourraient répondre à mon besoin.';
+
+      if (WHATSAPP_NUMBER) {
+        btn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      } else {
+        // Lien temporaire en développement — à remplacer par le numéro professionnel
+        btn.href = '#contact';
+      }
+    }
+
+    /* ===== Navigation mobile ===== */
+    function setupMobileNav() {
+      const toggle = document.getElementById('navToggle');
+      const links = document.getElementById('navLinks');
+      const navLinkItems = links.querySelectorAll('a');
+
+      function closeMenu() {
+        toggle.classList.remove('open');
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Ouvrir le menu');
+      }
+
+      toggle.addEventListener('click', () => {
+        const isOpen = toggle.classList.toggle('open');
+        links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+      });
+
+      navLinkItems.forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && links.classList.contains('open')) {
+          closeMenu();
+          toggle.focus();
+        }
+      });
+    }
+
+    /* ===== Défilement fluide ===== */
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        const navHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height'));
+        const top = el.getBoundingClientRect().top + window.pageYOffset - navHeight + 1;
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top, behavior: prefersReduced ? 'auto' : 'smooth' });
+      }
+    }
+
+    /* ===== Mise en évidence du lien actif ===== */
+    function setupActiveNav() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-links a');
+      const navHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height'));
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            navLinks.forEach(link => {
+              link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+            });
+          }
+        });
+      }, { rootMargin: `-${navHeight + 20}px 0px -60% 0px` });
+
+      sections.forEach(s => observer.observe(s));
+    }
+
+    /* ===== Apparitions au défilement ===== */
+    function setupReveal() {
+      const elements = document.querySelectorAll('.reveal');
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (prefersReduced) {
+        elements.forEach(el => el.classList.add('visible'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      elements.forEach(el => observer.observe(el));
+    }
+
+    /* ===== Année courante ===== */
+    function setYear() {
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    }
+
+    /* ===== Initialisation ===== */
+    document.addEventListener('DOMContentLoaded', () => {
+      renderServices();
+      renderProjects();
+      setupWhatsApp();
+      setupMobileNav();
+      setupActiveNav();
+      setupReveal();
+      setYear();
+    });
+  </script>
+</body>
+</html>
